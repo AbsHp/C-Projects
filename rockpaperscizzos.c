@@ -25,3 +25,13 @@ int game(char you, char computer)
     else if (you == 'z' && computer == 'p')
         return 1;
 }
+
+int main()
+{
+    int n;
+ 
+    char you, computer, result;
+ 
+    srand(time(NULL));
+ 
+    n = rand() % 100;
