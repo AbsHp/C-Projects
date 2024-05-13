@@ -64,7 +64,7 @@ int main()
     {
         printf("\n\n\t\t\t\tOh! You have lost the game!\n");
     }
-    printf("\t\t\t\tYOu choose : %c and Computer choose : %c\n", you, computer);
+    printf("\t\t\t\tYou chose : %c and Computer chose : %c\n", you, computer);
 
     return 0;
 }
