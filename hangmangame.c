@@ -260,3 +260,32 @@ void game(char sortedArr[][SIZE_CHARECTERS], int option, int lenOfOption, char h
     }
 }
 
+int main() {
+
+    char mainStr[SIZE_NAME*SIZE_CHARECTERS];
+    char sortedArr[SIZE_NAME][SIZE_CHARECTERS];
+    char hint[SIZE_CHARECTERS] = {0};
+
+    printf("Enter your words:\n");
+    scanf("%[^\n]", mainStr);
+
+    int wordNum = strList(sortedArr, mainStr,hint, ",");
+
+    sort(sortedArr, wordNum);
+
+    const int ONE = 1;
+    printf("choose an option:\n");
+    for(int i = 0; i < wordNum; i++){
+        printf("%d: %s\n", (i + ONE), sortedArr[i]);
+    }
+
+    int option;
+    scanf("%d", &option);
+    option -= ONE;
+
+    int lenOfOption = strlen(sortedArr[option]);
+
+    game(sortedArr, option, lenOfOption, hint);
+
+    return 0;
+}
