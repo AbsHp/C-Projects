@@ -23,3 +23,28 @@ void sort(char sortedArr[][SIZE_CHARECTERS], int wordNum){
     }
 }
 
+int strList(char sortedArr[][SIZE_CHARECTERS], char mainStr[], char hint[], char sep[]){
+
+    const char start = ':';
+
+    for(int i = 0; mainStr[i] != start; i++){
+        hint[i] = mainStr[i];
+    }
+
+    char *token;
+    token = strchr(mainStr, start);
+
+    token += sizeof(char);
+    token = strtok(token, sep);
+
+    int wordNum = 0;
+
+    while (token != NULL){
+        strcpy(sortedArr[wordNum], token);
+        token = strtok(NULL, sep);
+        wordNum++;
+    }
+
+    return wordNum;
+}
+
